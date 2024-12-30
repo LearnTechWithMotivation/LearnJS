@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--primaryFont);
+}
+
+:root {
+    --primaryFont: "Roboto Condensed", serif;
+    --fontColor1: #0101a1;
+    --whiteFont: white;
+    --white2: rgb(255, 238, 238);
+    --backGroundGradient: radial-gradient(circle, #9bdcff, #8ce6fd, #87eff4, #8ff6e6, #a4fbd4, #b0e8a8, #c1d282, #d2b967, #cf814b, #bb474b, #910d58, #4a0064);
+}
+
+body {
+    height: 100vh;
+    background-image: var(--backGroundGradient);
+}
+
+.Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.nameDisplay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    width: auto;
+}
+#userName{
+    color: var(--whiteFont);
+    white-space: nowrap;
+}
+.borderedFont{
+    text-shadow: 0.05em 0.05em 0 black, -0.05em -0.05em 0 black, 0.05em -0.05em 0 black, -0.05em 0.05em 0 black;
+    letter-spacing: 0.05em;
+}
+
+.Main h1 {
+    color: var(--fontColor1);
+    font-size: 2em;
+}
+.nameTaker{
+    border: 0.25em solid black;
+    border-radius: 0.3em;
+    padding: 2.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    opacity: 0;               /* Initially hidden */
+    visibility: hidden;       /* Hide the element */
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.show {
+    opacity: 1;               /* Fully visible */
+    visibility: visible;      /* Make it visible */
+}
+.nameTaker[hidden] {
+    display: none !important;
+}
+.nameTaker input{
+    border: none;
+    border-radius: 0.3em;
+    height: 2em;
+    width: 100%;
+    text-align: center;
+}
+.nameTaker input::placeholder{
+    text-align: center;
+}
+.Main .clickMe{
+    margin-top: 1%;
+    padding: .5%;
+    border: none;
+    border-radius: 0.3em;
+    color: var(--whiteFont);
+    background-color: black;
+    font-size: 1em;
+    box-shadow: 0px 0px 1.5em 0.5em black;
+}
+.clickMe:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: transform 0.05s step-end;
+    font-weight: bold;
+}
